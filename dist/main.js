@@ -30,6 +30,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/modules/getDate.js":
+/*!********************************!*\
+  !*** ./src/modules/getDate.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst getDate = () => {\r\n  return fetch(\r\n    \"https://mytestapp-253712-default-rtdb.firebaseio.com/goods.json\"\r\n  ).then((response) => response.json());\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getDate);\r\n\n\n//# sourceURL=webpack://ozon-maket/./src/modules/getDate.js?");
+
+/***/ }),
+
 /***/ "./src/modules/search.js":
 /*!*******************************!*\
   !*** ./src/modules/search.js ***!
@@ -46,7 +56,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst second = () => {\r\n  let openModal = document.getElementById(\"cart\");\r\n  console.log(\"hello world\");\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (second);\r\n\n\n//# sourceURL=webpack://ozon-maket/./src/modules/second.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _getDate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getDate */ \"./src/modules/getDate.js\");\n\r\n\r\nconst second = () => {\r\n  let openModal = document.getElementById(\"cart\");\r\n  openModal.addEventListener(\"click\", () => {\r\n    (0,_getDate__WEBPACK_IMPORTED_MODULE_0__[\"default\"])().then((res) => console.log(res));\r\n  });\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (second);\r\n\n\n//# sourceURL=webpack://ozon-maket/./src/modules/second.js?");
 
 /***/ })
 

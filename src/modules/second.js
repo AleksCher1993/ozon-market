@@ -1,5 +1,9 @@
+import getDate from "./getDate";
+
 const second = () => {
   let openModal = document.getElementById("cart");
-  console.log("hello world");
+  openModal.addEventListener("click", () => {
+    getDate().then((res) => console.log(res));
+  });
 };
 export default second;
