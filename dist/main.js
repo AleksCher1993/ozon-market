@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/card */ \"./src/modules/card.js\");\n/* harmony import */ var _modules_search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/search */ \"./src/modules/search.js\");\n/* harmony import */ var _modules_second__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/second */ \"./src/modules/second.js\");\n\r\n\r\n\r\n(0,_modules_card__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_second__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n(0,_modules_search__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n\n\n//# sourceURL=webpack://ozon-maket/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/card */ \"./src/modules/card.js\");\n/* harmony import */ var _modules_category__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/category */ \"./src/modules/category.js\");\n/* harmony import */ var _modules_load__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/load */ \"./src/modules/load.js\");\n/* harmony import */ var _modules_search__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/search */ \"./src/modules/search.js\");\n\r\n\r\n\r\n\r\n(0,_modules_card__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_load__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n(0,_modules_search__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\r\n(0,_modules_category__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n\n\n//# sourceURL=webpack://ozon-maket/./src/index.js?");
 
 /***/ }),
 
@@ -30,6 +30,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/modules/category.js":
+/*!*********************************!*\
+  !*** ./src/modules/category.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst category = () => {\r\n  let catalogButton = document.querySelector(\".catalog-button\");\r\n  let catalog = document.querySelector(\".catalog\");\r\n  let isOpen = false;\r\n  catalogButton.addEventListener(\"click\", () => {\r\n    isOpen = !isOpen;\r\n    isOpen ? (catalog.style.display = \"flex\") : (catalog.style.display = \"\");\r\n  });\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (category);\r\n\n\n//# sourceURL=webpack://ozon-maket/./src/modules/category.js?");
+
+/***/ }),
+
+/***/ "./src/modules/filter.js":
+/*!*******************************!*\
+  !*** ./src/modules/filter.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"searchFilter\": () => (/* binding */ searchFilter),\n/* harmony export */   \"catalogFilter\": () => (/* binding */ catalogFilter),\n/* harmony export */   \"priceFilter\": () => (/* binding */ priceFilter)\n/* harmony export */ });\nconst searchFilter = (data, value) => {\r\n  return data.filter((elem) => {\r\n    return elem.title.toLowerCase().includes(value.toLowerCase());\r\n  });\r\n};\r\nconst catalogFilter = (data, value) => {\r\n  return data.filter((elem) => {\r\n    return elem.category.includes(value);\r\n  });\r\n};\r\nconst priceFilter = (data, min = 1) => {\r\n  return data.filter((elem) => {\r\n    return elem.price > min;\r\n  });\r\n};\r\n\n\n//# sourceURL=webpack://ozon-maket/./src/modules/filter.js?");
+
+/***/ }),
+
 /***/ "./src/modules/getDate.js":
 /*!********************************!*\
   !*** ./src/modules/getDate.js ***!
@@ -40,23 +60,33 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/modules/load.js":
+/*!*****************************!*\
+  !*** ./src/modules/load.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _getDate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getDate */ \"./src/modules/getDate.js\");\n/* harmony import */ var _renderGoods__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./renderGoods */ \"./src/modules/renderGoods.js\");\n\r\n\r\nconst load = () => {\r\n  let openModal = document.getElementById(\"cart\");\r\n  (0,_getDate__WEBPACK_IMPORTED_MODULE_0__[\"default\"])().then((res) => (0,_renderGoods__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(res));\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (load);\r\n\n\n//# sourceURL=webpack://ozon-maket/./src/modules/load.js?");
+
+/***/ }),
+
+/***/ "./src/modules/renderGoods.js":
+/*!************************************!*\
+  !*** ./src/modules/renderGoods.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nlet renderGoods = (data) => {\r\n  let rowNoGuttersGoods = document.querySelector(\".goods\");\r\n  rowNoGuttersGoods.innerHTML = \"\";\r\n  data.forEach((element) => {\r\n    rowNoGuttersGoods.insertAdjacentHTML(\r\n      \"beforeend\",\r\n      `<div class=\"col-12 col-md-6 col-lg-4 col-xl-3\">\r\n      <div class=\"card\">\r\n        <div class=\"card-sale\">${element.sale ? \"🔥Hot Sale🔥\" : \"\"}</div>\r\n        <div class=\"card-img-wrapper\">\r\n          <span\r\n            class=\"card-img-top\"\r\n            style=\"\r\n              background-image: url('${element.img}');\r\n            \"\r\n          ></span>\r\n        </div>\r\n        <div class=\"card-body justify-content-between\">\r\n          <div class=\"card-price\">${element.price} ₽</div>\r\n          <h5 class=\"card-title\">${element.title}</h5>\r\n          <button class=\"btn btn-primary\">В корзину</button>\r\n        </div>\r\n      </div>\r\n    </div>`\r\n    );\r\n  });\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (renderGoods);\r\n\n\n//# sourceURL=webpack://ozon-maket/./src/modules/renderGoods.js?");
+
+/***/ }),
+
 /***/ "./src/modules/search.js":
 /*!*******************************!*\
   !*** ./src/modules/search.js ***!
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst search = () => {\r\n  let searchBtn = document.querySelector(\".search-btn>button\");\r\n  let searchWrapperInput = document.querySelector(\".search-wrapper_input\");\r\n  searchBtn.addEventListener(\"click\", () => {\r\n    if (searchWrapperInput.value === \"\") {\r\n      searchWrapperInput.placeholder = \"Введите продукт\";\r\n    } else {\r\n      console.log(searchWrapperInput.value);\r\n      searchWrapperInput.value = \"\";\r\n    }\r\n  });\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (search);\r\n\n\n//# sourceURL=webpack://ozon-maket/./src/modules/search.js?");
-
-/***/ }),
-
-/***/ "./src/modules/second.js":
-/*!*******************************!*\
-  !*** ./src/modules/second.js ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _getDate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getDate */ \"./src/modules/getDate.js\");\n\r\n\r\nconst second = () => {\r\n  let openModal = document.getElementById(\"cart\");\r\n  openModal.addEventListener(\"click\", () => {\r\n    (0,_getDate__WEBPACK_IMPORTED_MODULE_0__[\"default\"])().then((res) => console.log(res));\r\n  });\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (second);\r\n\n\n//# sourceURL=webpack://ozon-maket/./src/modules/second.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _getDate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getDate */ \"./src/modules/getDate.js\");\n/* harmony import */ var _renderGoods__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./renderGoods */ \"./src/modules/renderGoods.js\");\n/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./filter */ \"./src/modules/filter.js\");\n\r\n\r\n\r\nconst search = () => {\r\n  let searchWrapperInput = document.querySelector(\".search-wrapper_input\");\r\n  let catalog = document.querySelector(\".catalog\");\r\n  let catalogList = catalog.querySelector(\"ul\");\r\n  let filterPriceRange = document.querySelector(\".filter-price_range\");\r\n  let min;\r\n  let max;\r\n\r\n  searchWrapperInput.addEventListener(\"input\", (event) => {\r\n    const value = event.target.value;\r\n    (0,_getDate__WEBPACK_IMPORTED_MODULE_0__[\"default\"])().then((date) => (0,_renderGoods__WEBPACK_IMPORTED_MODULE_1__[\"default\"])((0,_filter__WEBPACK_IMPORTED_MODULE_2__.searchFilter)(date, value)));\r\n  });\r\n\r\n  catalogList.addEventListener(\"click\", (e) => {\r\n    let value = e.target;\r\n    if (value.closest(\"li\")) {\r\n      (0,_getDate__WEBPACK_IMPORTED_MODULE_0__[\"default\"])().then((date) =>\r\n        (0,_renderGoods__WEBPACK_IMPORTED_MODULE_1__[\"default\"])((0,_filter__WEBPACK_IMPORTED_MODULE_2__.catalogFilter)(date, value.innerHTML))\r\n      );\r\n    }\r\n  });\r\n\r\n  filterPriceRange.addEventListener(\"input\", (e) => {\r\n    let t = e.target.closest(\"#min\");\r\n    (0,_getDate__WEBPACK_IMPORTED_MODULE_0__[\"default\"])().then((data) => (0,_renderGoods__WEBPACK_IMPORTED_MODULE_1__[\"default\"])((0,_filter__WEBPACK_IMPORTED_MODULE_2__.priceFilter)(data, Number(t.value))));\r\n  });\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (search);\r\n\n\n//# sourceURL=webpack://ozon-maket/./src/modules/search.js?");
 
 /***/ })
 

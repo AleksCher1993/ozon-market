@@ -1,6 +1,8 @@
 import cart from "./modules/card";
+import category from "./modules/category";
+import load from "./modules/load";
 import search from "./modules/search";
-import second from "./modules/second";
 cart();
-second();
+load();
 search();
+category();

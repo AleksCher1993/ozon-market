@@ -1,7 +1,10 @@
 const deleteDate = () => {
-  return fetch("http://localhost:3000/goods/27", {
-    method: "DELETE",
-  }).then((res) => {
+  return fetch(
+    "https://mytestapp-253712-default-rtdb.firebaseio.com/goods.json",
+    {
+      method: "DELETE",
+    }
+  ).then((res) => {
     return res.json();
   });
 };
