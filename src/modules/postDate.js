@@ -1,12 +1,7 @@
-const postDate = () => {
-  return fetch("http://localhost:3000/goods", {
+const postDate = (data) => {
+  return fetch("https://jsonplaceholder.typicode.com/posts", {
     method: "POST",
-    body: JSON.stringify({
-      title: "Mortal Combat",
-      price: 3000,
-      sale: false,
-      category: "Игры",
-    }),
+    body: JSON.stringify(data),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },

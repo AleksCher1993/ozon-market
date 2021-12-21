@@ -1,11 +1,12 @@
 let renderGoods = (data) => {
+  localStorage.setItem("goods", JSON.stringify(data));
   let rowNoGuttersGoods = document.querySelector(".goods");
   rowNoGuttersGoods.innerHTML = "";
   data.forEach((element) => {
     rowNoGuttersGoods.insertAdjacentHTML(
       "beforeend",
       `<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-      <div class="card">
+      <div class="card" data-key=${element.id}>
         <div class="card-sale">${element.sale ? "🔥Hot Sale🔥" : ""}</div>
         <div class="card-img-wrapper">
           <span
